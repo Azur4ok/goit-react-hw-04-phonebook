@@ -30,14 +30,11 @@ export const App = () => {
     setFilter(event.currentTarget.value);
   };
 
-  const onFilterContacts = () =>
-    filter
-      ? contacts.filter(({ name }) =>
-          name.toLowerCase().includes(filter.toLowerCase())
-        )
-      : contacts;
-
-  const filteredContacts = onFilterContacts();
+  const filteredContacts = filter
+    ? contacts.filter(({ name }) =>
+        name.toLowerCase().includes(filter.toLowerCase())
+      )
+    : contacts;
 
   return (
     <div className={styles.app}>
